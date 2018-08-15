@@ -1,0 +1,47 @@
+#### Install centos
+
+docker pull centos:6
+
+#### Ingresar en la imagen
+
+docker run -it centos:6 /bin/bash
+
+#### Actualizar sistema
+
+[/]$ yum install
+
+#### Instalar httpd and git
+
+[/]$ yum install httpd git
+
+##### Copiar en la carpete por default
+
+[/]$ cp content-dockerquest-spacebones/doge/* /var/www/html
+
+##### Remove page bv default
+
+mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.bak
+
+##### Ensure httpd will run
+
+chkconfig httpd on
+
+#### Check process
+
+docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+a35670c40e12        centos:6            "/bin/bash"         3 minutes ago       Exited (0) 17 seconds ago                       practical_poincare
+
+
+#### Commit changes to docker
+
+docker commit a35670c40e12 spacebones:thewebsite
+
+#### Checking images
+docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+spacebones                     thewebsite          529ffc2e2953        7 seconds ago       349 MB
+docker.io/centos               6                   b5e5ffb5cdea        8 days ago          194 MB
+docker.io/06kellyjac/nyancat   latest              329bb91b174b        3 weeks ago         782 kB
+docker.io/hello-world          latest              2cb0d9787c4d        5 weeks ago         1.85 kB
+docker.io/spacebones/doge      latest              a01e4e5e728e        3 months ago        111 MB

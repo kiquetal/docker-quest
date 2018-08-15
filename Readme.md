@@ -20,7 +20,7 @@ Check docker
 
 #### docker ps
 
-Install image for docker
+Install image from docker
 
 #### docker pull docker.io/hello-world
 
@@ -32,3 +32,6 @@ Running static web pages
 
 #### docker run -d --name treatseekers -p 80:80 spacebones/doge
 
+Remove 
+
+#### docker rm $(docker ps -aq)
