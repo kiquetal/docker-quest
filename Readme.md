@@ -20,3 +20,10 @@ Check docker
 
 #### docker ps
 
+Install image for docker
+
+#### docker pull docker.io/hello-world
+
+Run image
+
+#### docker run hello-world
