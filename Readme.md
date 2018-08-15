@@ -27,3 +27,8 @@ Install image for docker
 Run image
 
 #### docker run hello-world
+
+Running static web pages
+
+#### docker run -d --name treatseekers -p 80:80 spacebones/doge
+
