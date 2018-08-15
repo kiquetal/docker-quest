@@ -1,0 +1,7 @@
+
+#### Create container and link
+
+    docker run -d -P --name treatlist --link spacebones:spacebones spacebones/postgres
+#### Inspect docker container
+
+    docker inspect -d "{{ .HostConfig.Links }}" treatlist
