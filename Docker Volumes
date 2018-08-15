@@ -1,0 +1,9 @@
+#### Create data volume for all containers
+
+    docker create -v /data --name boneyard spacesbones/postgres /bin/true
+
+#### Run containers
+
+    docker run -d --volumes-from boneyard --name cheese spacebones/postgres
+    docker run -d --volumes-from boneyard --name bacon spacebones/postgres
+    docker run -d --volumes-from boneyard --name tuna spacebones/postgres

@@ -1,22 +1,22 @@
 #### Move node-app
 
-cd /node-app
+    cd /node-app
 
 #### Create dockerFile
 
-FROM node:7
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
-CMD node index.js
-EXPOSE 8081
+    FROM node:7
+    WORKDIR /app
+    COPY package.json /app
+    RUN npm install
+    COPY . /app
+    CMD node index.js
+    EXPOSE 8081
 
 
 #### Construct image
 
-docker build -t baconator:dev .  
+    docker build -t baconator:dev .  
 
 #### Excute node-app docker
 
-docker run -d -p 80:8081 bacontaor:dev
+    docker run -d -p 80:8081 baconator:dev
