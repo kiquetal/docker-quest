@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+##NOTES
+    Instructions
+    if not already present, clone the content-dockerquest-spacebones repo on your machine
+    git clone https://github.com/linuxacademy/content-dockerquest-spacebones.git
+    create a new volume named missionstatus
+    docker volume create missionstatus
+    Use Docker commandline to print all information on the missionstatus volume.
+    docker volume inspect missionstatus
+    drop to root, then copy the contents of content-dockerquest-spacebones/volumes/ to missionstatus data directory
+    sudo -i
+    cp -r /home/user/content-dockerquest-spacebones/volumes/ /var/lib/docker/volumes/missionstatus/_data/
+    Exit root, then start a new container named fishin-mission using the httpd base image available on DockerHub, running on port 80.
+    docker run -d -p 80:80 --name fishin-mission \
+        --mount source=missionstatus,target=/usr/local/apache2/htdocs httpd
