@@ -1,0 +1,17 @@
+#### Creating network bridge
+
+    docker network create --driver=bridge --subnet=192.168.10.0/24 --gateway=192.168.10.250 borkspace
+
+
+Container Networking with Networks
+Negotiations between President Squawk & Droolidian officials are now complete, & now Droolidia is preparing to deliver the first treat rations to the nation of SpaceBones. Using the details below, create a new Docker network named borkspace using the 192.168.10.0/24 network range, with the gateway IP address 192.168.10.250. Once the borkspace network is created, use it to launch a new app named treattransfer in interactive mode using the spacebones/nyancat:latest. Once the container is running, you should see a live view of Droolidian cadets running to the rescue!
+
+create network
+docker network create --driver=bridge --subnet=192.168.10.0/24 --gateway=192.168.10.250 borkspace
+verify that network is created
+docker network ls
+docker network inspect borkspace
+launch treattransfer container using the borkspace network
+docker run -it --name treattransfer --network=borkspace -p 80:80 nyancat
+exit the container
+CTRL+c
